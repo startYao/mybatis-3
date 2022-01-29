@@ -16,6 +16,7 @@
 package org.apache.ibatis.parsing;
 
 /**
+ * 通用的 Token 解析器。代码如下
  * @author Clinton Begin
  */
 public class GenericTokenParser {
