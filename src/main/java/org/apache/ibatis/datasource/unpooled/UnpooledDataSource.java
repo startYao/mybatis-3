@@ -34,11 +34,25 @@ import org.apache.ibatis.io.Resources;
 /**
  * @author Clinton Begin
  * @author Eduardo Macarron
+ *
+ * 非池化的 DataSource 对象
  */
 public class UnpooledDataSource implements DataSource {
 
+  /**
+   * 已注册的 Driver 映射
+   *
+   * KEY：Driver 类名
+   * VALUE：Driver 对象
+   */
   private ClassLoader driverClassLoader;
+
+  /**
+   * Driver 类加载器
+   */
   private Properties driverProperties;
+
+  
   private static Map<String, Driver> registeredDrivers = new ConcurrentHashMap<>();
 
   private String driver;
